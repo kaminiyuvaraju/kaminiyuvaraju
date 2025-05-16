@@ -1,17 +1,18 @@
-// Set default dark mode if no theme is stored
+// Get references to body and toggle icon span
+const body = document.body;
 const icon = document.getElementById("theme-icon");
-const savedTheme = localStorage.getItem("theme");
 
+// Initialize theme on page load
+const savedTheme = localStorage.getItem("theme");
 if (!savedTheme || savedTheme === "dark") {
-  document.body.classList.add("dark");
-  localStorage.setItem("theme", "dark");
+  body.classList.add("dark");
   if (icon) icon.textContent = "Toggle-Light Mode";
 } else {
-  document.body.classList.remove("dark");
+  body.classList.remove("dark");
   if (icon) icon.textContent = "Toggle-Dark Mode";
 }
 
-// ✍️ Typing animation
+// Typing animation phrases
 const phrases = [
   "Software Engineer",
   "Data Scientist",
@@ -50,18 +51,15 @@ function loop() {
 
 loop();
 
-// 🌗 Toggle dark/light theme
+// Toggle dark/light mode and update button text + store preference
 function toggleDarkMode() {
-  const body = document.body;
-  const icon = document.getElementById("theme-icon");
-
   const isDark = body.classList.toggle("dark");
 
   if (isDark) {
     localStorage.setItem("theme", "dark");
-    icon.textContent = "Toggle-Light Mode";
+    if (icon) icon.textContent = "Toggle-Light Mode";
   } else {
     localStorage.setItem("theme", "light");
-    icon.textContent = "Toggle-Dark Mode";
+    if (icon) icon.textContent = "Toggle-Dark Mode";
   }
 }

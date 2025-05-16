@@ -1,6 +1,6 @@
 :root {
   --bg: #ffffff;
-  --text: #111;
+  --text: #111111;
   --primary: #6a1b9a;
   --highlight: #8e24aa;
   --card-bg: #f9f9f9;
@@ -8,8 +8,8 @@
 
 body.dark {
   --bg: #121212;
-  --text: #eee;
-  --card-bg: #222;
+  --text: #eeeeee;
+  --card-bg: #222222;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Header */
@@ -121,7 +121,7 @@ footer {
   color: #ffe082;
 }
 
-/* 🌗 Toggle button */
+/* Toggle button styles */
 .theme-toggle {
   display: inline-block;
   margin-top: 1rem;
