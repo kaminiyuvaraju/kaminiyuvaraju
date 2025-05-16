@@ -82,9 +82,9 @@ a {
   gap: 1rem;
   justify-content: center;
 }
-.stats-widgets iframe {
+.stats-widgets iframe,
+.stats-widgets img {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  border: none;
   border-radius: 10px;
 }
 footer {

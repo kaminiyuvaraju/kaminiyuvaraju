@@ -1,4 +1,4 @@
-// Add dark mode by default on page load
+// Enable dark mode by default
 document.body.classList.add("dark");
 
 const phrases = [
