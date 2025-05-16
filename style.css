@@ -86,3 +86,12 @@ footer {
 .highlight {
   color: #ffe082;
 }
+body.dark .card {
+  background: #222;
+  color: #eee;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .card a {
+  color: #90caf9;
+}
