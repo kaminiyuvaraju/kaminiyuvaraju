@@ -1,22 +1,22 @@
-// 🌙 Set dark mode by default if no preference is stored
+// Set dark mode by default on first load
 if (!localStorage.getItem("theme")) {
   document.body.classList.add("dark");
   localStorage.setItem("theme", "dark");
   const icon = document.getElementById("theme-icon");
-  if (icon) icon.textContent = "☀️";
+  if (icon) icon.textContent = "Toggle-Light Mode";
 } else if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
   const icon = document.getElementById("theme-icon");
-  if (icon) icon.textContent = "☀️";
+  if (icon) icon.textContent = "Toggle-Light Mode";
 } else {
   document.body.classList.remove("dark");
   const icon = document.getElementById("theme-icon");
-  if (icon) icon.textContent = "🌙";
+  if (icon) icon.textContent = "Toggle-Dark Mode";
 }
 
-// ✍️ Typing effect
+// Typing animation
 const phrases = [
-  "Software Developer",
+    "Software Engineer",
   "Data Scientist",
   "ML Engineer",
   "Flask & FastAPI Developer",
@@ -52,7 +52,7 @@ function loop() {
 
 loop();
 
-// 🌗 Toggle between light and dark mode
+// Theme toggle function
 function toggleDarkMode() {
   const body = document.body;
   const icon = document.getElementById("theme-icon");
@@ -61,9 +61,9 @@ function toggleDarkMode() {
 
   if (body.classList.contains("dark")) {
     localStorage.setItem("theme", "dark");
-    icon.textContent = "☀️";
+    icon.textContent = "Toggle-Light Mode";
   } else {
     localStorage.setItem("theme", "light");
-    icon.textContent = "🌙";
+    icon.textContent = "Toggle-Dark Mode";
   }
 }

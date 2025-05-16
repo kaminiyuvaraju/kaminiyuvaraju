@@ -97,19 +97,29 @@ footer {
   color: var(--highlight);
 }
 .theme-toggle {
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-top: 1rem;
   display: inline-block;
-  background-color: #333;
-  color: #ffe082;
-  padding: 0.4rem 0.8rem;
-  border-radius: 50px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #ffca28;
+  color: #222;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.dark .theme-toggle {
-  background-color: #ffca28;
-  color: #222;
+.theme-toggle:hover {
+  background-color: #f9a825;
+}
+
+/* Light mode override */
+body:not(.dark) .theme-toggle {
+  background-color: #333;
+  color: #eee;
+}
+
+body:not(.dark) .theme-toggle:hover {
+  background-color: #555;
 }
