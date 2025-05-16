@@ -1,27 +1,25 @@
-// Set dark mode by default on first load
-if (!localStorage.getItem("theme")) {
+// Set default dark mode if no theme is stored
+const icon = document.getElementById("theme-icon");
+const savedTheme = localStorage.getItem("theme");
+
+if (!savedTheme || savedTheme === "dark") {
   document.body.classList.add("dark");
   localStorage.setItem("theme", "dark");
-  const icon = document.getElementById("theme-icon");
-  if (icon) icon.textContent = "Toggle-Light Mode";
-} else if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
-  const icon = document.getElementById("theme-icon");
   if (icon) icon.textContent = "Toggle-Light Mode";
 } else {
   document.body.classList.remove("dark");
-  const icon = document.getElementById("theme-icon");
   if (icon) icon.textContent = "Toggle-Dark Mode";
 }
 
-// Typing animation
+// ✍️ Typing animation
 const phrases = [
-    "Software Engineer",
+  "Software Engineer",
   "Data Scientist",
   "ML Engineer",
   "Flask & FastAPI Developer",
   "GATE DS & AI 2025 Qualified"
 ];
+
 let i = 0, j = 0, currentPhrase = [], isDeleting = false;
 
 const typing = document.querySelector(".typing");
@@ -52,14 +50,14 @@ function loop() {
 
 loop();
 
-// Theme toggle function
+// 🌗 Toggle dark/light theme
 function toggleDarkMode() {
   const body = document.body;
   const icon = document.getElementById("theme-icon");
 
-  body.classList.toggle("dark");
+  const isDark = body.classList.toggle("dark");
 
-  if (body.classList.contains("dark")) {
+  if (isDark) {
     localStorage.setItem("theme", "dark");
     icon.textContent = "Toggle-Light Mode";
   } else {
