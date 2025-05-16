@@ -95,22 +95,23 @@ footer {
 }
 .highlight {
   color: var(--highlight);
-}
-.dark-mode-btn {
-  background: var(--primary);
-  color: white;
+}.dark-mode-btn {
+  background-color: #ffca28; /* bright amber */
+  color: #222; /* dark text for contrast */
   border: none;
   padding: 0.6rem 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 10px rgba(106, 27, 154, 0.4);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 202, 40, 0.6);
   margin-top: 1rem;
   font-size: 1rem;
   user-select: none;
 }
+
 .dark-mode-btn:hover {
-  background: #8e24aa;
-  box-shadow: 0 6px 14px rgba(142, 36, 170, 0.7);
+  background-color: #f9a825; /* darker amber on hover */
+  color: #000; /* even darker text */
+  box-shadow: 0 6px 16px rgba(249, 168, 37, 0.8);
 }
