@@ -1,4 +1,6 @@
-// Typing effect
+// Add dark mode by default on page load
+document.body.classList.add("dark");
+
 const phrases = [
   "Data Scientist",
   "ML Engineer",
@@ -35,7 +37,6 @@ function loop() {
 
 loop();
 
-// Dark Mode Toggle
 function toggleDarkMode() {
   document.body.classList.toggle("dark");
 }

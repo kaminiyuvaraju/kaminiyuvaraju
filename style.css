@@ -1,12 +1,8 @@
 :root {
-  --bg: #f4f4f4;
-  --text: #222;
-  --primary: #6a1b9a;
-  --highlight: #8e24aa;
-}
-body.dark {
   --bg: #121212;
   --text: #eee;
+  --primary: #6a1b9a;
+  --highlight: #ffe082;
 }
 body {
   margin: 0;
@@ -34,7 +30,7 @@ header {
   padding: 2rem 1rem;
 }
 h2 {
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #444;
   padding-bottom: 0.5rem;
 }
 .grid {
@@ -43,25 +39,17 @@ h2 {
   gap: 1.5rem;
 }
 .card {
-  background: white;
+  background: #222;
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(255,255,255,0.1);
   color: var(--text);
   transition: background 0.3s, color 0.3s;
 }
 .card a {
-  color: var(--primary);
+  color: var(--highlight);
   text-decoration: none;
   font-weight: bold;
-}
-body.dark .card {
-  background: #222;
-  color: #eee;
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
-}
-body.dark .card a {
-  color: #90caf9;
 }
 .skills {
   list-style: none;
@@ -86,6 +74,7 @@ a {
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
+  cursor: pointer;
 }
 .stats-widgets {
   display: flex;
@@ -101,22 +90,27 @@ a {
 footer {
   text-align: center;
   padding: 2rem;
-  background: #ddd;
-  color: #444;
+  background: #222;
+  color: #aaa;
 }
 .highlight {
-  color: #ffe082;
+  color: var(--highlight);
 }
 .dark-mode-btn {
-  background: #eee;
+  background: var(--primary);
+  color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border-radius: 25px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(106, 27, 154, 0.4);
   margin-top: 1rem;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  user-select: none;
 }
 .dark-mode-btn:hover {
-  background: #ccc;
+  background: #8e24aa;
+  box-shadow: 0 6px 14px rgba(142, 36, 170, 0.7);
 }
