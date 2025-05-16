@@ -2,26 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kamini Yuvaraju | Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
   <header>
     <div class="container">
-      <img src="assets/profile.jpg" alt="Kamini" class="profile-img">
+      <img src="assets/profile.jpg" alt="Kamini" class="profile-img" />
       <h1>Hi, I'm <span class="highlight">Kamini Yuvaraju</span></h1>
       <p><span class="typing"></span></p>
-      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+      <button onclick="toggleDarkMode()" class="dark-mode-btn">Toggle Dark Mode</button>
     </div>
   </header>
 
   <section class="container" id="about">
     <h2>🧠 About Me</h2>
     <p>
-      Aspiring Software Engineer with strong foundations in Python, Machine Learning, and Web Development. 
-      GATE 2025 Qualified in Data Science and AI. Passionate about solving real-world problems using scalable, intelligent solutions.
+      Aspiring Software Engineer with strong foundations in Python, Machine Learning,
+      and Web Development. GATE 2025 Qualified in Data Science and AI. Passionate about
+      solving real-world problems using scalable, intelligent solutions.
     </p>
   </section>
 
@@ -43,12 +44,12 @@
       <div class="card">
         <h3>Rice Crop Disease Detection</h3>
         <p>ResNet-50 deep learning model deployed with Flask to detect four major rice leaf diseases.</p>
-        <a href="https://github.com/kaminiyuvaraju/Rice_Crop_Disease_Detection" target="_blank">View on GitHub</a>
+        <a href="https://github.com/kaminiyuvaraju/Rice_Crop_Disease_Detection" target="_blank" rel="noopener noreferrer">View on GitHub</a>
       </div>
       <div class="card">
         <h3>IPL Win Predictor</h3>
         <p>Real-time match score and win probability predictor using multiple regression models and Flask APIs.</p>
-        <a href="https://github.com/kaminiyuvaraju/IPL_Score_And_Win_Probability_Predictor" target="_blank">View on GitHub</a>
+        <a href="https://github.com/kaminiyuvaraju/IPL_Score_And_Win_Probability_Predictor" target="_blank" rel="noopener noreferrer">View on GitHub</a>
       </div>
     </div>
   </section>
@@ -74,11 +75,36 @@
   <section class="container" id="certificates">
     <h2>🏆 Certificates & Achievements</h2>
     <ul>
-      <li>GATE DS & AI 2025 – Qualified</li>
-      <li>Data Science & ML Certification – GeeksforGeeks</li>
-      <li>Machine Learning, Deep Learning & NLP – Udemy</li>
-      <li>Data Structures & Algorithms (Python) – GeeksforGeeks</li>
-      <li>Python (Basic) & SQL (Basic) – HackerRank</li>
+      <li>
+        <a href="https://media.geeksforgeeks.org/courses/certificates/b0ee312c2a512b1a852a7dd1ca68d056.pdf" target="_blank" rel="noopener noreferrer">
+          GATE DS & AI 2025 – Qualified
+        </a>
+      </li>
+      <li>
+        <a href="https://media.geeksforgeeks.org/courses/certificates/2f58d6e0639707055c180ac5cd360368.pdf" target="_blank" rel="noopener noreferrer">
+          Data Science & ML Certification – GeeksforGeeks
+        </a>
+      </li>
+      <li>
+        <a href="https://www.udemy.com/certificate/your-udemy-certificate-link" target="_blank" rel="noopener noreferrer">
+          Machine Learning, Deep Learning & NLP – Udemy
+        </a>
+      </li>
+      <li>
+        <a href="https://media.geeksforgeeks.org/courses/certificates/b0ee312c2a512b1a852a7dd1ca68d056.pdf" target="_blank" rel="noopener noreferrer">
+          Data Structures & Algorithms (Python) – GeeksforGeeks
+        </a>
+      </li>
+      <li>
+        <a href="https://www.hackerrank.com/certificates/b977cb51981e" target="_blank" rel="noopener noreferrer">
+          Python (Basic) Certification – HackerRank
+        </a>
+      </li>
+      <li>
+        <a href="https://www.hackerrank.com/certificates/14e552531dce" target="_blank" rel="noopener noreferrer">
+          SQL (Basic) Certification – HackerRank
+        </a>
+      </li>
       <li>5⭐ Problem Solving & SQL – HackerRank</li>
     </ul>
   </section>
@@ -92,20 +118,44 @@
     </ul>
   </section>
 
-  <section class="container" id="resume">
-    <h2>📄 Resume</h2>
-    <a href="assets/resume.pdf" target="_blank" class="btn">Download Resume</a>
+  <section class="container" id="coding-profiles">
+    <h2>💻 Coding Profiles</h2>
+    <div class="stats-widgets">
+      <!-- LeetCode Stats -->
+      <iframe 
+        src="https://leetcard.jacoblin.cool/KAMINIYUVARAJU?theme=dark" 
+        height="150" 
+        width="500" 
+        frameborder="0" 
+        scrolling="no"
+        style="border-radius: 10px; margin-bottom: 1rem;">
+      </iframe>
+
+      <!-- GeeksforGeeks Badge -->
+      <iframe 
+        src="https://auth.geeksforgeeks.org/badge/image/kaminiyuvaraju" 
+        height="150" 
+        width="200" 
+        frameborder="0" 
+        scrolling="no"
+        style="border-radius: 10px;">
+      </iframe>
+    </div>
   </section>
 
-<section class="container" id="contact">
-  <h2>📬 Contact</h2>
-  <p>Email: <a href="mailto:kaminiyuvaraju@gmail.com">kaminiyuvaraju@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/kamini-yuvaraju-249a71259" target="_blank">kamini-yuvaraju-249a71259</a></p>
-  <p>GitHub: <a href="https://github.com/kaminiyuvaraju" target="_blank">kaminiyuvaraju</a></p>
-  <p>GeeksforGeeks: <a href="https://www.geeksforgeeks.org/user/kaminiyuvaraju/" target="_blank">kaminiyuvaraju</a></p>
-  <p>LeetCode: <a href="https://leetcode.com/u/KAMINIYUVARAJU/" target="_blank">KAMINIYUVARAJU</a></p>
-</section>
+  <section class="container" id="resume">
+    <h2>📄 Resume</h2>
+    <a href="assets/Kamini Yuvaraju-Resume.pdf" target="_blank" class="btn" rel="noopener noreferrer">Download Resume</a>
+  </section>
 
+  <section class="container" id="contact">
+    <h2>📬 Contact</h2>
+    <p>Email: <a href="mailto:kaminiyuvaraju@gmail.com">kaminiyuvaraju@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/kamini-yuvaraju-249a71259" target="_blank" rel="noopener noreferrer">kamini-yuvaraju-249a71259</a></p>
+    <p>GitHub: <a href="https://github.com/kaminiyuvaraju" target="_blank" rel="noopener noreferrer">kaminiyuvaraju</a></p>
+    <p>GeeksforGeeks: <a href="https://www.geeksforgeeks.org/user/kaminiyuvaraju/" target="_blank" rel="noopener noreferrer">kaminiyuvaraju</a></p>
+    <p>LeetCode: <a href="https://leetcode.com/u/KAMINIYUVARAJU/" target="_blank" rel="noopener noreferrer">KAMINIYUVARAJU</a></p>
+  </section>
 
   <footer>
     <p>© 2025 Kamini Yuvaraju</p>

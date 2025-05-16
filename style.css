@@ -47,11 +47,21 @@ h2 {
   border-radius: 10px;
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
 }
 .card a {
   color: var(--primary);
   text-decoration: none;
   font-weight: bold;
+}
+body.dark .card {
+  background: #222;
+  color: #eee;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+body.dark .card a {
+  color: #90caf9;
 }
 .skills {
   list-style: none;
@@ -77,6 +87,17 @@ a {
   border-radius: 8px;
   text-decoration: none;
 }
+.stats-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.stats-widgets iframe {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border: none;
+  border-radius: 10px;
+}
 footer {
   text-align: center;
   padding: 2rem;
@@ -86,12 +107,16 @@ footer {
 .highlight {
   color: #ffe082;
 }
-body.dark .card {
-  background: #222;
-  color: #eee;
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+.dark-mode-btn {
+  background: #eee;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
 }
-
-body.dark .card a {
-  color: #90caf9;
+.dark-mode-btn:hover {
+  background: #ccc;
 }
