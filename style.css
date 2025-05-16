@@ -111,7 +111,7 @@ footer {
 }
 
 .dark-mode-btn:hover {
-  background-color: #f9a825; /* darker amber on hover */
-  color: #000; /* even darker text */
+  background-color: #ed9506; /* darker amber on hover */
+  color: #101010; /* even darker text */
   box-shadow: 0 6px 16px rgba(249, 168, 37, 0.8);
 }
