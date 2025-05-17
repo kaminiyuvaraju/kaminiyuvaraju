@@ -1,4 +1,3 @@
-// Get references to body and toggle icon span
 const body = document.body;
 const icon = document.getElementById("theme-icon");
 
@@ -12,7 +11,7 @@ if (!savedTheme || savedTheme === "dark") {
   if (icon) icon.textContent = "Toggle-Dark Mode";
 }
 
-// Typing animation phrases
+// Typing animation setup
 const phrases = [
   "Software Engineer",
   "Data Scientist",
@@ -22,13 +21,14 @@ const phrases = [
 ];
 
 let i = 0, j = 0, currentPhrase = [], isDeleting = false;
-
 const typing = document.querySelector(".typing");
 
 function loop() {
+  if (!typing) return;  // safety check
+
   typing.innerHTML = currentPhrase.join("");
 
-  if (!isDeleting && j <= phrases[i].length) {
+  if (!isDeleting && j < phrases[i].length) {
     currentPhrase.push(phrases[i][j]);
     j++;
   } else if (isDeleting && j > 0) {
@@ -41,7 +41,6 @@ function loop() {
   }
 
   if (isDeleting && j === 0) {
-    currentPhrase = [];
     isDeleting = false;
     i = (i + 1) % phrases.length;
   }
@@ -51,7 +50,7 @@ function loop() {
 
 loop();
 
-// Toggle dark/light mode and update button text + store preference
+// Dark mode toggle function
 function toggleDarkMode() {
   const isDark = body.classList.toggle("dark");
 
