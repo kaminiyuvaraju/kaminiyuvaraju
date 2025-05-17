@@ -149,3 +149,62 @@ body:not(.dark) .theme-toggle {
 body:not(.dark) .theme-toggle:hover {
   background-color: #555;
 }
+/* Navbar styles */
+.navbar {
+  background: var(--primary);
+  color: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.navbar-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1rem 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--highlight);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+.contact-icons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.contact-icons a img {
+  width: 40px;
+  height: 40px;
+  filter: var(--text) brightness(0) invert(0); /* for light/dark adjustment */
+  transition: filter 0.3s ease;
+}
+
+body.dark .contact-icons a img {
+  filter: brightness(0) invert(1); /* invert colors in dark mode */
+}
+
+.contact-icons a:hover img {
+  filter: brightness(0) invert(0.7);
+  transform: scale(1.1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
