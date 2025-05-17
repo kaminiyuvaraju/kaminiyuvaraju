@@ -85,6 +85,11 @@ h2 {
 
 a {
   color: var(--highlight);
+  text-decoration: none;
+}
+
+body.dark a {
+  color: #90caf9; /* lighter for dark mode */
 }
 
 .btn {
@@ -149,6 +154,7 @@ body:not(.dark) .theme-toggle {
 body:not(.dark) .theme-toggle:hover {
   background-color: #555;
 }
+
 /* Navbar styles */
 .navbar {
   background: var(--primary);
@@ -164,9 +170,10 @@ body:not(.dark) .theme-toggle:hover {
   max-width: 1000px;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 1.2rem;
-  padding: 1rem 0;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .nav-link {
@@ -184,27 +191,27 @@ body:not(.dark) .theme-toggle:hover {
 html {
   scroll-behavior: smooth;
 }
+
+/* Contact Icons Section */
 .contact-icons {
   display: flex;
-  gap: 1.5rem;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
   margin-top: 1rem;
 }
 
-.contact-icons a img {
-  width: 40px;
-  height: 40px;
-  filter: var(--text) brightness(0) invert(0); /* for light/dark adjustment */
-  transition: filter 0.3s ease;
+.contact-icons a {
+  font-size: 2rem;
+  color: var(--text);
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-body.dark .contact-icons a img {
-  filter: brightness(0) invert(1); /* invert colors in dark mode */
+.contact-icons a:hover {
+  transform: scale(1.2);
+  color: var(--highlight);
 }
 
-.contact-icons a:hover img {
-  filter: brightness(0) invert(0.7);
-  transform: scale(1.1);
-  transition: transform 0.3s ease, filter 0.3s ease;
+body.dark .contact-icons a {
+  color: #eee;
 }
