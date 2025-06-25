@@ -1,65 +1,54 @@
-  // Get references to body and toggle icon span
-  const body = document.body;
+// script.js
+
+// DARK MODE TOGGLE
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+
   const icon = document.getElementById("theme-icon");
+  const isDark = document.body.classList.contains("dark-mode");
+  icon.textContent = isDark ? "Toggle-Light Mode" : "Toggle-Dark Mode";
+}
 
-  // Initialize theme on page load
-  const savedTheme = localStorage.getItem("theme");
-  if (!savedTheme || savedTheme === "dark") {
-    body.classList.add("dark");
-    if (icon) icon.textContent = "Toggle-Light Mode";
+// TYPING EFFECT FOR HEADER
+const typingElement = document.querySelector(".typing");
+const typingTexts = [
+  "Software Engineer",
+  "Machine Learning Enthusiast",
+  "Web Developer",
+  "FastAPI & Flask Developer"
+];
+
+let charIndex = 0;
+let textIndex = 0;
+let isDeleting = false;
+let delay = 100;
+
+function type() {
+  const currentText = typingTexts[textIndex];
+
+  if (isDeleting) {
+    typingElement.textContent = currentText.substring(0, charIndex--);
   } else {
-    body.classList.remove("dark");
-    if (icon) icon.textContent = "Toggle-Dark Mode";
+    typingElement.textContent = currentText.substring(0, charIndex++);
   }
 
-  // Typing animation phrases
-  const phrases = [
-    "Software Engineer",
-    "Data Scientist",
-    "ML Engineer",
-    "Flask & FastAPI Developer",
-    "GATE DS & AI 2025 Qualified"
-  ];
-
-  let i = 0, j = 0, currentPhrase = [], isDeleting = false;
-
-  const typing = document.querySelector(".typing");
-
-  function loop() {
-    typing.innerHTML = currentPhrase.join("");
-
-    if (!isDeleting && j <= phrases[i].length) {
-      currentPhrase.push(phrases[i][j]);
-      j++;
-    } else if (isDeleting && j > 0) {
-      currentPhrase.pop();
-      j--;
-    }
-
-    if (j === phrases[i].length) {
-      isDeleting = true;
-    }
-
-    if (isDeleting && j === 0) {
-      currentPhrase = [];
-      isDeleting = false;
-      i = (i + 1) % phrases.length;
-    }
-
-    setTimeout(loop, isDeleting ? 70 : 120);
+  if (!isDeleting && charIndex === currentText.length) {
+    isDeleting = true;
+    delay = 1500; // pause after full word
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    textIndex = (textIndex + 1) % typingTexts.length;
+    delay = 300;
+  } else {
+    delay = isDeleting ? 50 : 100;
   }
 
-  loop();
+  setTimeout(type, delay);
+}
 
-  // Toggle dark/light mode and update button text + store preference
-  function toggleDarkMode() {
-    const isDark = body.classList.toggle("dark");
-
-    if (isDark) {
-      localStorage.setItem("theme", "dark");
-      if (icon) icon.textContent = "Toggle-Light Mode";
-    } else {
-      localStorage.setItem("theme", "light");
-      if (icon) icon.textContent = "Toggle-Dark Mode";
-    }
+// Start the typing effect after DOM content is loaded
+document.addEventListener("DOMContentLoaded", () => {
+  if (typingElement) {
+    type();
   }
+});
