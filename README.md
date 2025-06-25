@@ -45,13 +45,15 @@ Hi, I'm **Kamini Yuvaraju** — Aspiring Software Engineer with strong foundatio
 
 ## 🚀 Projects
 
-### 🌾 Rice Crop Disease Detection  
-ResNet-50 deep learning model deployed with Flask to detect four major rice leaf diseases.  
-🔗 [View on GitHub](https://github.com/kaminiyuvaraju/Rice_Crop_Disease_Detection)
 
 ### 🏏 IPL Win Predictor  
 Real-time match score and win probability predictor using regression models and Flask APIs.  
 🔗 [View on GitHub](https://github.com/kaminiyuvaraju/IPL_Score_And_Win_Probability_Predictor)
+
+
+### 🌾 Rice Crop Disease Detection  
+ResNet-50 deep learning model deployed with Flask to detect four major rice leaf diseases.  
+🔗 [View on GitHub](https://github.com/kaminiyuvaraju/Rice_Crop_Disease_Detection)
 
 ---
 
