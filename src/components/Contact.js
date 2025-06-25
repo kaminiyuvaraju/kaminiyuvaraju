@@ -61,7 +61,7 @@ const Contact = () => {
               {
                 icon: <FaLinkedin />,
                 label: "LinkedIn",
-                href: "https://linkedin.com/in/kamini-yuvaraju-249a71259",
+                href: "https://linkedin.com/in/kamini-yuvaraju",
               },
             ].map((item, index) => (
               <motion.a

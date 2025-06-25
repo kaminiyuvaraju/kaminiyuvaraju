@@ -28,7 +28,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Kamini Portfolio
+            Kamini Yuvaraju Portfolio
           </motion.h1>
 
           <div className="hidden md:flex space-x-6">

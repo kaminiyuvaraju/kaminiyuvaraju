@@ -30,7 +30,6 @@ const About = () => {
           viewport={{ once: true }}
         >
           <p>
-            I’m an aspiring{" "}
             <span className="font-semibold text-indigo-500">Software Engineer</span> with a passion
             for building intelligent, scalable solutions. I have a strong foundation in Python, Machine Learning, and
             Web Development.
