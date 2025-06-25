@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
-}
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  background: #2c3e50;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+}
+.nav-link {
   color: white;
+  margin: 0 0.8rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
-
-.App-link {
-  color: #61dafb;
+.nav-link:hover {
+  color: #f1c40f;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.skills li {
+  display: inline-block;
+  margin: 0.4rem;
+  padding: 0.5rem 1rem;
+  background-color: #ecf0f1;
+  border-radius: 20px;
+}
+.skills li:hover {
+  background-color: #dfe6e9;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.btn {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: #2980b9;
+}
+.contact-icons a {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+.contact-icons a:hover {
+  color: #3498db;
+}
+.section-box {
+  @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-8;
 }
