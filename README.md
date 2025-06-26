@@ -1,6 +1,6 @@
 # Kamini Yuvaraju
 
-Hi, I'm **Kamini Yuvaraju** — Aspiring Software Engineer with strong foundations in Python, Machine Learning, and Web Development.  
+Hi, I'm **Kamini Yuvaraju** — Software Engineer with strong foundations in Python, Machine Learning, and Web Development.  
 🎯 GATE 2025 Qualified in Data Science and AI. Passionate about solving real-world problems using scalable, intelligent solutions.
 
 ---
