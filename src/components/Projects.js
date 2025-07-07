@@ -5,19 +5,19 @@ import { FaCheckCircle } from "react-icons/fa";
 const Projects = () => {
   const projects = [
     {
-      title: "Patient Engagement System (PEP)",
-      tech: "FastAPI, GraphQL, MongoDB, Redis, JWT, React",
-      role: "Backend Developer",
-      period: "Feb 2024 – May 2024",
-      description:
-        "A production-grade Patient Engagement Platform for AIG Hospitals enabling doctor booking, walk-ins, authentication, and real-time availability.",
-      features: [
-        "JWT-based login with secure role access",
-        "GraphQL APIs for appointments and availability",
-        "Redis caching to boost performance by 60%",
-      ],
-      link: "N/A",
-    },
+  title: "Patient Engagement System (PEP)",
+  tech: "FastAPI, GraphQL, MongoDB, Redis, JWT, React",
+  role: "Backend Developer @ Achala IT Solutions",
+  period: "Apr 2024 – Present (Ongoing)",
+  description:
+    "A production-grade Patient Engagement Platform for AIG Hospitals enabling doctor booking, walk-ins, authentication, and real-time availability.",
+  features: [
+    "JWT-based login with secure role access",
+    "GraphQL APIs for appointments and availability",
+    "Redis caching to boost performance by 60%",
+  ],
+  link: "N/A",
+},
     {
       title: "IPL Score & Win Probability Predictor",
       tech: "Python, Flask, Regression Models, Scikit-learn",
