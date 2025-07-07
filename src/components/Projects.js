@@ -22,7 +22,7 @@ const Projects = () => {
       title: "IPL Score & Win Probability Predictor",
       tech: "Python, Flask, Regression Models, Scikit-learn",
       role: "Fullstack Developer",
-      period: "Jul 2023",
+      period: "Aug 2024 - Nov 2024",
       description:
         "Live IPL match score and win probability prediction app using regression algorithms served through Flask APIs.",
       features: [
@@ -36,7 +36,7 @@ const Projects = () => {
       title: "Rice Crop Disease Detection",
       tech: "Python, ResNet-50, Flask, OpenCV",
       role: "ML Engineer",
-      period: "Oct 2022 – Dec 2022",
+      period: "Oct 2023 – Dec 2024",
       description:
         "Image classification system for detecting rice leaf diseases using deep learning and computer vision.",
       features: [
