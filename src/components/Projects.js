@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projects = [
     {
-      title: "Doctor Appointment Booking System (PEP)",
+      title: "Patient Engagement System (PEP)",
       tech: "FastAPI, GraphQL, MongoDB, Redis, JWT, React",
       description:
         "A production-level Patient Engagement Platform for AIG Hospitals with JWT auth, doctor availability, GraphQL APIs, and Redis caching.",
