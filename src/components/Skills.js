@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const skills = [
   "Python", "SQL", "HTML", "CSS", "JavaScript",
-  "FastAPI", "Flask", "React", "GraphQL",
-  "MongoDB", "PostgreSQL", "Redis",
+  "FastAPI", "React", "GraphQL",
+  "MongoDB", "PostgreSQL","Docker",
   "Machine Learning", "Artificial Intelligence",
   "Pandas", "Numpy", "Scikit-learn",
   "GitHub", "VSCode", "Jupyter Notebook"
