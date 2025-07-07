@@ -1,27 +1,49 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaCheckCircle } from "react-icons/fa";
 
 const Projects = () => {
   const projects = [
     {
       title: "Patient Engagement System (PEP)",
       tech: "FastAPI, GraphQL, MongoDB, Redis, JWT, React",
+      role: "Backend Developer",
+      period: "Feb 2024 – May 2024",
       description:
-        "A production-level Patient Engagement Platform for AIG Hospitals with JWT auth, doctor availability, GraphQL APIs, and Redis caching.",
+        "A production-grade Patient Engagement Platform for AIG Hospitals enabling doctor booking, walk-ins, authentication, and real-time availability.",
+      features: [
+        "JWT-based login with secure role access",
+        "GraphQL APIs for appointments and availability",
+        "Redis caching to boost performance by 60%",
+      ],
       link: "N/A",
     },
     {
       title: "IPL Score & Win Probability Predictor",
       tech: "Python, Flask, Regression Models, Scikit-learn",
+      role: "Fullstack Developer",
+      period: "Jul 2023",
       description:
-        "Predicted live IPL match scores and win probabilities using regression models and Flask APIs.",
+        "Live IPL match score and win probability prediction app using regression algorithms served through Flask APIs.",
+      features: [
+        "Preprocessed 200+ IPL matches for model training",
+        "Built multiple regressors to predict final scores",
+        "Responsive web interface for live inputs",
+      ],
       link: "https://github.com/kaminiyuvaraju/IPL_Score_And_Win_Probability_Predictor",
     },
     {
       title: "Rice Crop Disease Detection",
       tech: "Python, ResNet-50, Flask, OpenCV",
+      role: "ML Engineer",
+      period: "Oct 2022 – Dec 2022",
       description:
-        "Built a ResNet-50 based deep learning model to classify major rice leaf diseases and deployed it using Flask.",
+        "Image classification system for detecting rice leaf diseases using deep learning and computer vision.",
+      features: [
+        "Fine-tuned ResNet-50 for 3 major rice diseases",
+        "Achieved 93% test accuracy using transfer learning",
+        "Deployed via Flask with real-time image upload",
+      ],
       link: "https://github.com/kaminiyuvaraju/Rice_Crop_Disease_Detection",
     },
   ];
@@ -41,30 +63,44 @@ const Projects = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
         >
           🚀 Projects
         </motion.h2>
 
         <motion.div
-          className="grid gap-10 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-10 md:grid-cols-2"
           initial="hidden"
           whileInView="visible"
           transition={{ staggerChildren: 0.2 }}
-          viewport={{ once: true }}
         >
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 border-t-4 border-purple-400"
+              className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-purple-500 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0 },
               }}
             >
-              <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>
-              <p className="text-sm text-purple-600 font-medium mb-3">{project.tech}</p>
-              <p className="text-gray-700 text-sm mb-4">{project.description}</p>
+              <h3 className="text-xl font-bold text-indigo-800 mb-1">{project.title}</h3>
+              <p className="text-sm text-purple-600 font-medium mb-1">{project.tech}</p>
+              <p className="text-sm text-gray-500 mb-1">
+                <span className="font-medium text-gray-700">Role:</span> {project.role}
+              </p>
+              <p className="text-sm text-gray-500 mb-3">
+                <span className="font-medium text-gray-700">Timeline:</span> {project.period}
+              </p>
+              <p className="text-gray-700 mb-4 text-sm">{project.description}</p>
+
+              <ul className="text-gray-700 text-sm mb-4 pl-4 list-disc space-y-1">
+                {project.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <FaCheckCircle className="text-green-500 mt-[2px]" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
               {project.link !== "N/A" ? (
                 <a
                   href={project.link}
@@ -75,7 +111,7 @@ const Projects = () => {
                   🔗 View on GitHub
                 </a>
               ) : (
-                <span className="text-gray-400 italic text-sm">Private Project</span>
+                <span className="text-gray-400 italic text-sm">🔒 Private Project</span>
               )}
             </motion.div>
           ))}
