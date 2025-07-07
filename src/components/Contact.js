@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaPhoneAlt, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaInstagram, FaGithub, FaGlobe } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -41,7 +41,7 @@ const Contact = () => {
           </motion.p>
 
           <motion.div
-            className="flex flex-col md:flex-row justify-center items-center gap-6 text-indigo-600 text-lg"
+            className="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-6 text-indigo-600 text-lg"
             initial="hidden"
             whileInView="visible"
             transition={{ staggerChildren: 0.2 }}
@@ -56,18 +56,23 @@ const Contact = () => {
               {
                 icon: <FaPhoneAlt />,
                 label: "+91 6305763683",
-                href: "tel:+91 6305763683",
+                href: "tel:+916305763683",
               },
               {
                 icon: <FaLinkedin />,
                 label: "LinkedIn",
                 href: "https://linkedin.com/in/kamini-yuvaraju",
               },
+              {
+                icon: <FaInstagram />,
+                label: "Instagram",
+                href: "https://instagram.com/kaminiyuvaraju", 
+              },
             ].map((item, index) => (
               <motion.a
                 key={index}
                 href={item.href}
-                target={item.href.startsWith("http") ? "_blank" : undefined}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-indigo-800 transition"
                 variants={{
