@@ -83,4 +83,4 @@ ResNet-50 deep learning model deployed with Flask to detect four major rice leaf
 ---
 
 ⭐ Feel free to explore my full interactive portfolio here:  
-🔗 [[https://kaminiyuvaraju.github.io/kaminiyuvaraju](https://kaminiyuvaraju-portfolio.netlify.app/)]
+🔗 [[https://kaminiyuvaraju-portfolio.netlify.app/](https://kaminiyuvaraju-portfolio.netlify.app/)]
