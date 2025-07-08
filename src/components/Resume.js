@@ -49,6 +49,7 @@ const Resume = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
+            {/* 📥 Download Button */}
             <a
               href="/Kamini-Resume.pdf"
               download
@@ -56,6 +57,8 @@ const Resume = () => {
             >
               📥 Download Resume
             </a>
+
+            {/* 🔎 View Online Button */}
             <a
               href="/Kamini-Resume.pdf"
               target="_blank"
