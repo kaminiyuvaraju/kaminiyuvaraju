@@ -38,8 +38,8 @@ const Resume = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            You can download or view my latest resume including experience, education,
-            skills, and projects.
+            // You can download or view my latest resume including experience, education,
+            // skills, and projects.
           </motion.p>
 
           <motion.div
