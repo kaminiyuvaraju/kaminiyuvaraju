@@ -43,7 +43,7 @@ const Resume = () => {
           </motion.p>
 
           <motion.div
-            className="flex flex-col gap-4 items-center justify-center mt-4"
+            className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -61,7 +61,7 @@ const Resume = () => {
               href="/Kamini-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white border border-indigo-600 text-indigo-600 px-6 py-3 rounded-full shadow-md hover:bg-indigo-50 transition duration-300"
+              className="bg-white border-2 border-indigo-600 text-indigo-600 px-6 py-3 rounded-full shadow-md hover:bg-indigo-100 transition duration-300"
             >
               🔎 View Online
             </a>
