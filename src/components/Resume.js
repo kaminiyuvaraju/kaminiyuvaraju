@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaFilePdf } from "react-icons/fa";
 
 const Resume = () => {
   return (
@@ -20,13 +21,14 @@ const Resume = () => {
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-3xl font-bold text-indigo-700 mb-6"
+            className="text-3xl font-bold text-indigo-700 mb-4 flex items-center justify-center gap-2"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            📄 Resume
+            <FaFilePdf className="text-indigo-600" />
+            Resume
           </motion.h2>
 
           <motion.p
@@ -36,19 +38,33 @@ const Resume = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            You can download my latest resume in PDF format. It includes my experience,
-            education, skills, and project details.
+            You can download or view my latest resume including experience, education,
+            skills, and projects.
           </motion.p>
 
-          <motion.a
-            href="/Kamini-Resume.pdf"
-            download
-            className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-indigo-700 transition duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
           >
-            Download Resume
-          </motion.a>
+            <a
+              href="/Kamini-Resume.pdf"
+              download
+              className="bg-indigo-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-indigo-700 transition duration-300"
+            >
+              📥 Download Resume
+            </a>
+            <a
+              href="/Kamini-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white border border-indigo-600 text-indigo-600 px-6 py-3 rounded-full shadow-md hover:bg-indigo-50 transition duration-300"
+            >
+              🔎 View Online
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </motion.section>
