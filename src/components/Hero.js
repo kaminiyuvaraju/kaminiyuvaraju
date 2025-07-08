@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <motion.section
-      className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-24 shadow-lg"
+      className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-20 shadow-lg"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -20,23 +20,35 @@ const Hero = () => {
         </motion.h1>
 
         <motion.p
-          className="text-xl md:text-2xl font-medium mb-8"
+          className="text-xl md:text-2xl font-medium mb-6"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Software Engineer | FastAPI | MongoDB | GATE 2025 Qualified
+          Software Engineer @ Achala IT Solutions | GATE 2025 Qualified (DS & AI)
         </motion.p>
 
-        <motion.a
-          href="#contact"
-          className="inline-block bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-indigo-100 transition duration-300"
+        <motion.div
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          Let’s Connect
-        </motion.a>
+          <a
+            href="#contact"
+            className="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-indigo-100 transition duration-300"
+          >
+            Let’s Connect
+          </a>
+
+          <a
+            href="/Kamini-Resume.pdf"
+            download
+            className="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-indigo-100 transition duration-300"
+          >
+            📥 Download Resume
+          </a>
+        </motion.div>
       </div>
     </motion.section>
   );
