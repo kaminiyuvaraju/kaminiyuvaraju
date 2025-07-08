@@ -43,7 +43,7 @@ const Resume = () => {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -58,7 +58,7 @@ const Resume = () => {
               📥 Download Resume
             </a>
 
-            {/* 🔎 View Online Button */}
+            {/* 🔎 View Online Button using the same path */}
             <a
               href="/Kamini-Resume.pdf"
               target="_blank"
