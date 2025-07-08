@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
   return (
     <motion.section
-      className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-20 shadow-lg"
+      className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-24 shadow-lg"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -19,14 +20,26 @@ const Hero = () => {
           Hi, I'm Kamini Yuvaraju
         </motion.h1>
 
-        <motion.p
-          className="text-xl md:text-2xl font-medium mb-6"
+        <motion.div
+          className="text-xl md:text-2xl font-medium mb-8 h-[40px]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-        Software Engineer @ Achala IT Solutions | GATE 2025 Qualified (DS & AI)
-        </motion.p>
+          <TypeAnimation
+            sequence={[
+              "Software Engineer @ Achala IT Solutions",
+              2000,
+              "FastAPI • GraphQL • MongoDB",
+              2000,
+              "GATE 2025 Qualified (DS & AI)",
+              2000,
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+          />
+        </motion.div>
 
         <motion.a
           href="#contact"
