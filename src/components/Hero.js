@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
   return (
@@ -20,26 +19,14 @@ const Hero = () => {
           Hi, I'm Kamini Yuvaraju
         </motion.h1>
 
-        <motion.div
-          className="text-xl md:text-2xl font-medium mb-8 h-[40px]"
+        <motion.p
+          className="text-xl md:text-2xl font-medium mb-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <TypeAnimation
-            sequence={[
-              "Software Engineer @ Achala IT Solutions",
-              2000,
-              "FastAPI • GraphQL • MongoDB",
-              2000,
-              "GATE 2025 Qualified (DS & AI)",
-              2000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-          />
-        </motion.div>
+          Software Engineer | FastAPI | MongoDB | GATE 2025 Qualified
+        </motion.p>
 
         <motion.a
           href="#contact"
