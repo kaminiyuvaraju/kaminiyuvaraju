@@ -61,7 +61,7 @@ const Resume = () => {
               href="/Kamini-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white border-2 border-indigo-600 text-indigo-600 px-6 py-3 rounded-full shadow-md hover:bg-indigo-100 transition duration-300"
+              className="bg-indigo-100 border-2 border-indigo-600 text-indigo-700 px-6 py-3 rounded-full shadow-md hover:bg-indigo-200 transition duration-300"
             >
               🔎 View Online
             </a>
