@@ -25,7 +25,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-        Software Engineer | GATE 2025 Qualified (DS & AI)
+        Software Engineer @ Achala IT Solutions | GATE 2025 Qualified (DS & AI)
         </motion.p>
 
         <motion.a
