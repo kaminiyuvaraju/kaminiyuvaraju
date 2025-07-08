@@ -29,7 +29,7 @@ const Hero = () => {
         </motion.p>
 
         <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
@@ -39,14 +39,6 @@ const Hero = () => {
             className="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-indigo-100 transition duration-300"
           >
             Let’s Connect
-          </a>
-
-          <a
-            href="/Kamini-Resume.pdf"
-            download
-            className="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-indigo-100 transition duration-300"
-          >
-            📥 Download Resume
           </a>
         </motion.div>
       </div>
