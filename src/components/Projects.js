@@ -7,7 +7,7 @@ const Projects = () => {
     {
   title: "Patient Engagement System (PEP)",
   tech: "FastAPI, GraphQL, MongoDB, Redis, JWT, React",
-  role: "Backend Developer @ Achala IT Solutions",
+  role: "Fullstack Developer @ Achala IT Solutions",
   period: "June 2025 – Present (Ongoing)",
   description:
     "A production-grade Patient Engagement Platform for AIG Hospitals enabling doctor booking, walk-ins, authentication, and real-time availability.",
