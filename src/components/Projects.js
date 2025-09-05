@@ -12,9 +12,13 @@ const Projects = () => {
   description:
     "A production-grade Patient Engagement Platform for AIG Hospitals enabling doctor booking, walk-ins, authentication, and real-time availability.",
   features: [
-    "JWT-based login with secure role access",
-    "GraphQL APIs for appointments and availability",
-    "Redis caching to boost performance by 60%",
+features: [
+  "Frontend: Built appointment booking flows, supervisor dashboards, and real-time updates using React.js",
+  "Backend: Developed GraphQL APIs for appointments & availability, integrated JWT authentication, and implemented Redis caching (60% faster performance)",
+  "Designed and maintained the Appointments Module and Supervisor Screen (managing tickets, calls, and missed-call alerts)",
+  "Ensured scalability, security, and smooth hospital operations",
+],
+
   ],
   link: "N/A",
 },
