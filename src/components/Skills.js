@@ -2,13 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const skills = [
-  "Python", "SQL", "HTML", "CSS", "JavaScript",
-  "FastAPI", "React", "GraphQL",
-  "MongoDB", "PostgreSQL","Docker",
-  "Machine Learning", "Artificial Intelligence",
-  "Pandas", "Numpy", "Scikit-learn",
-  "GitHub", "VSCode", "Jupyter Notebook"
+  "Python", "JavaScript", "TypeScript",
+  "FastAPI", "Node.js", "NestJS", "REST APIs", "GraphQL",
+  "HTML", "CSS", "JavaScript", "React",
+  "MongoDB", "PostgreSQL", "SQL",
+  "Docker", "GitHub", "VSCode", "PgAdmin", "Jupyter Notebook", "MongoDB Compass",
+  "Model Development & Evaluation"
 ];
+
 
 const Skills = () => {
   return (
