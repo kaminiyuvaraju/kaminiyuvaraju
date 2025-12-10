@@ -5,48 +5,34 @@ import { FaCheckCircle } from "react-icons/fa";
 const Projects = () => {
   const projects = [
     {
-      title: "Patient Engagement System (PEP)",
-      tech: "FastAPI, GraphQL, MongoDB, Redis, JWT, React",
-      role: "Fullstack Developer @ Achala IT Solutions",
-      period: "June 2025 – Present (Ongoing)",
+      title: "AHS Patient Engagement Platform — AIG Hospitals",
+      tech: "Python, FastAPI, GraphQL (Strawberry), React.js, MongoDB, JWT, AsyncIO, Pydantic, Docker, GitHub",
+      role: "Software Engineer @ Achala IT Solutions",
+      period: "Jun 2025 – Present",
       description:
-        "A production-grade Patient Engagement Platform for AIG Hospitals enabling doctor booking, walk-ins, authentication, and real-time availability.",
+        "End-to-end Patient Engagement Platform for AIG Hospitals handling patient registration, authentication, and appointment scheduling with real-time doctor availability.",
       features: [
-        "Frontend: Built appointment booking flows, supervisor dashboards, and real-time updates using React.js",
-        "Backend: Developed GraphQL APIs for appointments & availability, integrated JWT authentication, and implemented Redis caching (60% faster performance)",
-        "Designed and maintained the Appointments Module and Supervisor Screen (managing tickets, calls, and missed-call alerts)",
-        "Ensured scalability, security, and smooth hospital operations",
+        "Designed and developed backend APIs using FastAPI, GraphQL (Strawberry), and MongoDB for registration, auth, and appointments",
+        "Implemented JWT-based authentication and role-based access control for secure access management",
+        "Integrated backend with React.js frontend for dynamic booking flows and doctor availability dashboards",
+        "Used Pydantic, AsyncIO, and Docker for validation, async performance, and containerized deployments",
       ],
       link: "N/A",
     },
-
     {
-      title: "IPL Score & Win Probability Predictor",
-      tech: "Python, Flask, Regression Models, Scikit-learn",
-      role: "Fullstack Developer",
-      period: "Aug 2024 - Nov 2024",
+      title: "PEP Leads Conversion",
+      tech: "Python, FastAPI, REST APIs, React.js, MongoDB, JWT, AsyncIO, Pydantic, Docker, GitHub",
+      role: "Software Engineer @ Achala IT Solutions",
+      period: "Jun 2025 – Present",
       description:
-        "Live IPL match score and win probability prediction app using regression algorithms served through Flask APIs.",
+        "Lead conversion and analytics system built on top of the Patient Engagement Platform, focused on visit history, follow-ups, and performance insights.",
       features: [
-        "Preprocessed 200+ IPL matches for model training",
-        "Built multiple regressors to predict final scores",
-        "Responsive web interface for live inputs",
+        "Developed and maintained backend services using FastAPI and RESTful APIs for healthcare data workflows",
+        "Implemented logic to create and manage patient visit records for better tracking of historical summaries and follow-ups",
+        "Built an analytics dashboard to visualize lead conversion metrics and patient insights",
+        "Collaborated with data and frontend teams ensuring scalable and accurate API integration across modules",
       ],
-      link: "https://github.com/kaminiyuvaraju/IPL_Score_And_Win_Probability_Predictor",
-    },
-    {
-      title: "Rice Crop Disease Detection",
-      tech: "Python, ResNet-50, Flask, OpenCV",
-      role: "ML Engineer",
-      period: "Oct 2023 – Dec 2024",
-      description:
-        "Image classification system for detecting rice leaf diseases using deep learning and computer vision.",
-      features: [
-        "Fine-tuned ResNet-50 for 3 major rice diseases",
-        "Achieved 93% test accuracy using transfer learning",
-        "Deployed via Flask with real-time image upload",
-      ],
-      link: "https://github.com/kaminiyuvaraju/Rice_Crop_Disease_Detection",
+      link: "N/A",
     },
   ];
 
@@ -84,17 +70,25 @@ const Projects = () => {
                 visible: { opacity: 1, y: 0 },
               }}
             >
-              <h3 className="text-xl font-bold text-indigo-800 mb-1">{project.title}</h3>
-              <p className="text-sm text-purple-600 font-medium mb-1">{project.tech}</p>
+              <h3 className="text-xl font-bold text-indigo-800 mb-1">
+                {project.title}
+              </h3>
+              <p className="text-sm text-purple-600 font-medium mb-1">
+                {project.tech}
+              </p>
               <p className="text-sm text-gray-500 mb-1">
-                <span className="font-medium text-gray-700">Role:</span> {project.role}
+                <span className="font-medium text-gray-700">Role:</span>{" "}
+                {project.role}
               </p>
               <p className="text-sm text-gray-500 mb-3">
-                <span className="font-medium text-gray-700">Timeline:</span> {project.period}
+                <span className="font-medium text-gray-700">Timeline:</span>{" "}
+                {project.period}
               </p>
-              <p className="text-gray-700 mb-4 text-sm">{project.description}</p>
+              <p className="text-gray-700 mb-4 text-sm">
+                {project.description}
+              </p>
 
-              <ul className="text-gray-700 text-sm mb-4 pl-4 list-disc space-y-1">
+              <ul className="text-gray-700 text-sm mb-4 space-y-2">
                 {project.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <FaCheckCircle className="text-green-500 mt-[2px]" />
@@ -113,11 +107,17 @@ const Projects = () => {
                   🔗 View on GitHub
                 </a>
               ) : (
-                <span className="text-gray-400 italic text-sm">🔒 Private Project</span>
+                <span className="text-gray-400 italic text-sm">
+                  🔒 Private Project
+                </span>
               )}
             </motion.div>
           ))}
         </motion.div>
+
+        <p className="text-center text-gray-600 mt-12 italic">
+          📄 For more details and complete experience, please refer to my resume.
+        </p>
       </div>
     </motion.section>
   );
