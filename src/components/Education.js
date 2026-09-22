@@ -1,76 +1,33 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { education } from "../data/portfolio";
+import Section, { fadeUp, stagger } from "./Section";
 
-const education = [
-  {
-    degree: "B.Tech in Computer Science",
-    institution: "RGUKT RK Valley",
-    duration: "2021 – 2025",
-    score: "CGPA: 9.0",
-  },
-  {
-    degree: "Pre-University Course (MPC)",
-    institution: "RGUKT RK Valley",
-    duration: "2019 – 2021",
-    score: "CGPA: 9.58",
-  },
-  {
-    degree: "Secondary School",
-    institution: "ZPHS RV Palli",
-    duration: "2018 – 2019",
-    score: "GPA: 10.0",
-  },
-];
-
-const Education = () => {
-  return (
-    <motion.section
-      id="education"
-      className="py-16 bg-white"
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+const Education = () => (
+  <Section id="education" eyebrow="05. Education" title="Where I studied">
+    <motion.div
+      className="grid gap-5 md:grid-cols-3"
+      variants={stagger}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="max-w-5xl mx-auto px-6">
-        <motion.h2
-          className="text-3xl font-bold text-indigo-600 mb-10 text-center"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          🎓 Education
-        </motion.h2>
-
+      {education.map((e, i) => (
         <motion.div
-          className="space-y-6"
-          initial="hidden"
-          whileInView="visible"
-          transition={{ staggerChildren: 0.2 }}
-          viewport={{ once: true }}
+          key={e.degree}
+          variants={fadeUp}
+          className={`card card-hover p-6 ${i === 0 ? "border-indigo-400/30 bg-indigo-500/[0.06]" : ""}`}
         >
-          {education.map((item, index) => (
-            <motion.div
-              key={index}
-              className="bg-gradient-to-br from-indigo-100 to-purple-100 p-6 rounded-xl shadow-lg border-l-4 border-indigo-500 hover:shadow-xl transition duration-300"
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-            >
-              <h3 className="text-xl font-semibold text-gray-800">{item.degree}</h3>
-              <p className="text-gray-700">{item.institution}</p>
-              <div className="flex justify-between text-sm text-gray-600 mt-2">
-                <span>{item.duration}</span>
-                <span>{item.score}</span>
-              </div>
-            </motion.div>
-          ))}
+          <p className="font-mono text-sm text-slate-500">{e.period}</p>
+          <h3 className="mt-3 text-lg font-semibold text-white">{e.degree}</h3>
+          <p className="text-slate-400">{e.institution}</p>
+          <p className="mt-4 inline-block rounded-md bg-indigo-400/10 px-2.5 py-1 text-sm font-semibold text-indigo-200">
+            {e.score}
+          </p>
         </motion.div>
-      </div>
-    </motion.section>
-  );
-};
+      ))}
+    </motion.div>
+  </Section>
+);
 
 export default Education;

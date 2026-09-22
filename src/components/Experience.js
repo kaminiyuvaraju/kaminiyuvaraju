@@ -1,68 +1,60 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FiMapPin } from "react-icons/fi";
+import { experience } from "../data/portfolio";
+import Section, { fadeUp, stagger } from "./Section";
 
-const Experience = () => {
-  return (
-    <motion.section
-      id="experience"
-      className="py-16 bg-white"
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true, amount: 0.2 }}
+const Experience = () => (
+  <Section id="experience" eyebrow="02. Experience" title="Where I've worked">
+    <motion.ol
+      className="relative space-y-10 border-l border-white/10 pl-8 md:pl-10"
+      variants={stagger}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.15 }}
     >
-      <div className="max-w-5xl mx-auto px-6">
-        <motion.h2
-          className="text-3xl font-bold text-indigo-600 mb-10 text-center"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          🧑‍💼 Experience
-        </motion.h2>
+      {experience.map((job, i) => (
+        <motion.li key={job.company} variants={fadeUp} className="relative">
+          <span
+            className={`absolute -left-[41px] top-7 h-4 w-4 rounded-full border-4 border-slate-950 md:-left-[49px] ${
+              i === 0 ? "bg-indigo-400 shadow-[0_0_0_4px_rgba(129,140,248,0.25)]" : "bg-slate-600"
+            }`}
+          />
+          <div className="card card-hover p-6 md:p-8">
+            <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+              <div>
+                <h3 className="text-xl font-semibold text-white">{job.role}</h3>
+                <p className="font-medium text-indigo-300">{job.company}</p>
+              </div>
+              <div className="text-sm text-slate-400 md:text-right">
+                <p className="font-mono">{job.period}</p>
+                <p className="inline-flex items-center gap-1">
+                  <FiMapPin /> {job.location}
+                </p>
+              </div>
+            </div>
 
-        <motion.div
-          className="bg-pink-50 border-l-4 border-indigo-500 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-xl font-semibold text-gray-800">
-            Software Engineer – Achala IT Solutions
-          </h3>
-          <p className="text-gray-500 italic mb-4">June 2025 – Present</p>
+            <ul className="mt-5 space-y-3">
+              {job.points.map((point) => (
+                <li key={point} className="flex gap-3 leading-relaxed text-slate-400">
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-400" />
+                  {point}
+                </li>
+              ))}
+            </ul>
 
-          <motion.ul
-            className="list-disc list-inside text-gray-700 space-y-2"
-            initial="hidden"
-            whileInView="visible"
-            transition={{ staggerChildren: 0.15 }}
-            viewport={{ once: true }}
-          >
-            {[
-              "Working on the PEP (Patient Engagement Platform) - AIG Hospitals product using FastAPI, MongoDB, and Redis.",
-              "Implemented the Doctor Appointment Module with GraphQL API integration.",
-              "Developed and integrated ticket and availability sections for Supervisor and Agent dashboards.",
-              "Handled JWT-based authentication and role-based access for multiple user types.",
-              "Worked on production-level debugging and optimized MongoDB queries for faster execution.",
-            ].map((item, index) => (
-              <motion.li
-                key={index}
-                variants={{
-                  hidden: { opacity: 0, x: -20 },
-                  visible: { opacity: 1, x: 0 },
-                }}
-              >
-                {item}
-              </motion.li>
-            ))}
-          </motion.ul>
-        </motion.div>
-      </div>
-    </motion.section>
-  );
-};
+            <div className="mt-6 flex flex-wrap gap-2">
+              {job.tags.map((t) => (
+                <span key={t} className="chip">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.li>
+      ))}
+    </motion.ol>
+  </Section>
+);
 
 export default Experience;

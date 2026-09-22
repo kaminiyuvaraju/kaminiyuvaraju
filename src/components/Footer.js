@@ -1,26 +1,18 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { FiArrowUp } from "react-icons/fi";
+import { profile } from "../data/portfolio";
 
-const Footer = () => {
-  return (
-    <motion.footer
-      className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 py-6 text-center text-gray-600 text-sm shadow-inner"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      <motion.p
-        className="hover:text-indigo-600 transition-colors duration-300 max-w-md mx-auto"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        © {new Date().getFullYear()} Kamini Yuvaraju. All rights reserved.
-      </motion.p>
-    </motion.footer>
-  );
-};
+const Footer = () => (
+  <footer className="border-t border-white/10">
+    <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-slate-500 sm:flex-row">
+      <p>
+        © {new Date().getFullYear()} {profile.name}. Built with React &amp; Tailwind CSS.
+      </p>
+      <a href="#top" className="inline-flex items-center gap-1.5 transition hover:text-indigo-300">
+        Back to top <FiArrowUp />
+      </a>
+    </div>
+  </footer>
+);
 
 export default Footer;

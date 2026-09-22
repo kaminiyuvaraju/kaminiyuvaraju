@@ -1,113 +1,88 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaEnvelope,
-  FaPhoneAlt,
-  FaLinkedin,
-  FaInstagram,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaGithub, FaHackerrank, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { SiGeeksforgeeks, SiLeetcode } from "react-icons/si";
+import { FiDownload, FiMail, FiPhone } from "react-icons/fi";
+import { profile, socials } from "../data/portfolio";
+import Section, { fadeUp, stagger } from "./Section";
 
-const Contact = () => {
-  const contactItems = [
-    {
-      icon: <FaEnvelope />,
-      label: "Email",
-      value: "kaminiyuvaraju@gmail.com",
-      href: "mailto:kaminiyuvaraju@gmail.com",
-    },
-    {
-      icon: <FaPhoneAlt />,
-      label: "Phone",
-      value: "+91 6305763683",
-      href: "tel:+916305763683",
-    },
-    {
-      icon: <FaLinkedin />,
-      label: "LinkedIn",
-      value: "kamini-yuvaraju",
-      href: "https://linkedin.com/in/kamini-yuvaraju",
-    },
-    {
-      icon: <FaInstagram />,
-      label: "Instagram",
-      value: "@kaminiyuvaraju",
-      href: "https://instagram.com/kaminiyuvaraju",
-    },
-    {
-      icon: <FaWhatsapp />,
-      label: "WhatsApp",
-      value: "+91 6305763683",
-      href: "https://wa.me/916305763683",
-    },
-  ];
+const profiles = [
+  { icon: <FaGithub />, label: "GitHub", href: socials.github },
+  { icon: <FaLinkedin />, label: "LinkedIn", href: socials.linkedin },
+  { icon: <SiLeetcode />, label: "LeetCode", href: socials.leetcode },
+  { icon: <FaHackerrank />, label: "HackerRank", href: socials.hackerrank },
+  { icon: <SiGeeksforgeeks />, label: "GeeksforGeeks", href: socials.gfg },
+  { icon: <FaWhatsapp />, label: "WhatsApp", href: socials.whatsapp },
+  { icon: <FaInstagram />, label: "Instagram", href: socials.instagram },
+];
 
-  return (
-    <motion.section
-      id="contact"
-      className="py-16 bg-gradient-to-r from-indigo-50 to-purple-50"
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true, amount: 0.2 }}
+const Contact = () => (
+  <Section id="contact" eyebrow="07. Contact" title="Let's work together">
+    <motion.div
+      className="card relative overflow-hidden p-8 md:p-12"
+      variants={stagger}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="max-w-5xl mx-auto px-6">
-        <motion.div
-          className="bg-white p-10 rounded-3xl shadow-xl transition duration-300 text-center"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <motion.h2
-            className="text-4xl font-bold text-indigo-700 mb-4"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            📬 Let's Connect
-          </motion.h2>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-indigo-600/20 blur-[100px]"
+      />
 
-          <motion.p
-            className="text-gray-700 text-lg mb-10"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            I’m open to freelance work, collaborations, or just a friendly hello!
-          </motion.p>
+      <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
+        <motion.div variants={fadeUp}>
+          <p className="max-w-md text-lg leading-relaxed text-slate-400">
+            I'm open to backend and AI engineering roles, collaborations, or just a friendly hello. My inbox is
+            always open.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a href={`mailto:${profile.email}`} className="btn-primary">
+              <FiMail /> Say hello
+            </a>
+            <a href={profile.resume} download className="btn-ghost">
+              <FiDownload /> Download resume
+            </a>
+          </div>
+        </motion.div>
 
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-indigo-600 text-base"
-            initial="hidden"
-            whileInView="visible"
-            transition={{ staggerChildren: 0.2 }}
-            viewport={{ once: true }}
+        <motion.div variants={fadeUp} className="space-y-3">
+          <a
+            href={`mailto:${profile.email}`}
+            className="flex items-center gap-4 rounded-xl border border-white/10 p-4 transition hover:border-indigo-400/40"
           >
-            {contactItems.map((item, index) => (
-              <motion.a
-                key={index}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-indigo-50 hover:bg-indigo-100 rounded-xl p-5 flex flex-col items-center shadow hover:shadow-md transition"
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-              >
-                <div className="text-2xl mb-2">{item.icon}</div>
-                <div className="font-semibold">{item.label}</div>
-                <div className="text-sm text-gray-700 mt-1">{item.value}</div>
-              </motion.a>
-            ))}
-          </motion.div>
+            <FiMail className="text-xl text-indigo-300" />
+            <span className="break-all text-slate-200">{profile.email}</span>
+          </a>
+          <a
+            href={`tel:${profile.phone.replace(/\s/g, "")}`}
+            className="flex items-center gap-4 rounded-xl border border-white/10 p-4 transition hover:border-indigo-400/40"
+          >
+            <FiPhone className="text-xl text-indigo-300" />
+            <span className="text-slate-200">{profile.phone}</span>
+          </a>
         </motion.div>
       </div>
-    </motion.section>
-  );
-};
+
+      <motion.div variants={fadeUp} className="relative mt-10 border-t border-white/10 pt-8">
+        <p className="mb-4 font-mono text-sm text-slate-500">Find me on</p>
+        <div className="flex flex-wrap gap-3">
+          {profiles.map((p) => (
+            <a
+              key={p.label}
+              href={p.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300 transition hover:border-indigo-400/40 hover:text-white"
+            >
+              <span className="text-lg">{p.icon}</span>
+              {p.label}
+            </a>
+          ))}
+        </div>
+      </motion.div>
+    </motion.div>
+  </Section>
+);
 
 export default Contact;

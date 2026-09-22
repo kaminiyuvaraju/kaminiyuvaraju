@@ -1,48 +1,54 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FiAward, FiBriefcase, FiCpu, FiServer } from "react-icons/fi";
+import { about } from "../data/portfolio";
+import Section, { fadeUp, stagger } from "./Section";
 
-const About = () => {
-  return (
-    <motion.section
-      id="about"
-      className="py-16 bg-gradient-to-r from-pink-100 to-purple-100"
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.2 }}
-    >
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        <motion.h2
-          className="text-3xl font-bold text-indigo-600 mb-6"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          🧠 About Me
-        </motion.h2>
+const highlights = [
+  { icon: <FiServer />, title: "Backend systems", text: "Async FastAPI, GraphQL, PostgreSQL, Redis, Celery" },
+  { icon: <FiCpu />, title: "Applied AI", text: "RAG, LangChain, NL-to-SQL, multi-agent pipelines" },
+  { icon: <FiBriefcase />, title: "Shipped to production", text: "Multi-tenant SaaS live across 5 brands" },
+  { icon: <FiAward />, title: "GATE 2025", text: "Qualified in Data Science & AI" },
+];
 
-        <motion.div
-          className="bg-white shadow-lg rounded-xl p-8 text-gray-800 text-lg leading-relaxed"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <p>
-            <span className="font-semibold text-indigo-500">Software Engineer</span> with a passion
-            for building intelligent, scalable solutions. I have a strong foundation in Python, Machine Learning, and
-            Web Development.
-          </p>
-          <p className="mt-4">
-            Qualified in <span className="font-semibold text-purple-600">GATE 2025 (Data Science & AI)</span>, I enjoy
-            solving real-world problems through technology and innovation. I'm enthusiastic about learning and contributing
-            to impactful projects.
-          </p>
-        </motion.div>
-      </div>
-    </motion.section>
-  );
-};
+const About = () => (
+  <Section id="about" eyebrow="01. About" title="A bit about me">
+    <div className="grid gap-12 lg:grid-cols-5">
+      <motion.div
+        className="space-y-5 text-lg leading-relaxed text-slate-400 lg:col-span-3"
+        variants={stagger}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        {about.map((p) => (
+          <motion.p key={p} variants={fadeUp}>
+            {p}
+          </motion.p>
+        ))}
+      </motion.div>
+
+      <motion.div
+        className="grid gap-4 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-1"
+        variants={stagger}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        {highlights.map((h) => (
+          <motion.div key={h.title} variants={fadeUp} className="card card-hover flex gap-4 p-5">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-500/20 text-xl text-indigo-300">
+              {h.icon}
+            </div>
+            <div>
+              <h3 className="font-semibold text-white">{h.title}</h3>
+              <p className="text-sm text-slate-400">{h.text}</p>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  </Section>
+);
 
 export default About;
