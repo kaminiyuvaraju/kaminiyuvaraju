@@ -116,21 +116,6 @@ export const work = [
   },
 ];
 
-export const otherProjects = [
-  {
-    title: "IPL Score & Win Predictor",
-    description: "Score and win-probability prediction (92% accuracy) served through a Flask API.",
-    tags: ["Python", "scikit-learn", "Flask"],
-    link: "https://github.com/kaminiyuvaraju/IPL_Score_And_Win_Probability_Predictor",
-  },
-  {
-    title: "Rice Crop Disease Detection",
-    description: "A ResNet-50 model, served with Flask, that detects four major rice leaf diseases.",
-    tags: ["Deep Learning", "ResNet-50", "Flask"],
-    link: "https://github.com/kaminiyuvaraju/Rice_Crop_Disease_Detection",
-  },
-];
-
 export const experience = [
   {
     company: "Achala IT Solutions",

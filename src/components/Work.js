@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
-import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
-import { otherProjects, work } from "../data/portfolio";
+import { FiArrowRight } from "react-icons/fi";
+import { work } from "../data/portfolio";
 import Section, { fadeUp, inView, stagger } from "./Section";
 
 const Status = ({ status }) =>
@@ -76,33 +75,6 @@ const Work = () => (
     <motion.div className="grid gap-6 lg:grid-cols-2" variants={stagger} {...inView}>
       {work.map((item) => (
         <CaseStudy key={item.id} item={item} />
-      ))}
-    </motion.div>
-
-    <motion.h3 className="mb-5 mt-16 text-lg font-semibold text-white" variants={fadeUp} {...inView}>
-      Earlier projects
-    </motion.h3>
-    <motion.div className="grid gap-4 md:grid-cols-2" variants={stagger} {...inView}>
-      {otherProjects.map((p) => (
-        <motion.a
-          key={p.title}
-          href={p.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          variants={fadeUp}
-          className="card card-hover group flex items-start gap-4 p-5"
-        >
-          <FaGithub className="mt-0.5 shrink-0 text-2xl text-slate-400" aria-hidden />
-          <div className="min-w-0 flex-1">
-            <h4 className="font-semibold text-white group-hover:text-indigo-200">{p.title}</h4>
-            <p className="mt-1 text-sm text-slate-400">{p.description}</p>
-            <p className="mt-3 font-mono text-xs text-slate-400">{p.tags.join(" · ")}</p>
-          </div>
-          <FiArrowUpRight
-            className="shrink-0 text-xl text-slate-400 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-indigo-300"
-            aria-hidden
-          />
-        </motion.a>
       ))}
     </motion.div>
   </Section>
