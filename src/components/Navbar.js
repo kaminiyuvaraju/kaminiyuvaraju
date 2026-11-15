@@ -4,11 +4,10 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { profile } from "../data/portfolio";
 
 const navItems = [
-  { id: "about", label: "About" },
+  { id: "work", label: "Work" },
   { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
-  { id: "skills", label: "Skills" },
-  { id: "education", label: "Education" },
+  { id: "about", label: "About" },
+  { id: "credentials", label: "Credentials" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -49,10 +48,19 @@ const Navbar = () => {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a href="#top" className="font-mono text-lg font-semibold text-white">
-          <span className="text-indigo-400">&lt;</span>
-          {profile.name.split(" ")[0]}
-          <span className="text-indigo-400"> /&gt;</span>
+        <a href="#top" className="flex items-center gap-3 font-mono text-lg font-semibold text-white">
+          <img
+            src="/avatar.webp"
+            alt=""
+            width="36"
+            height="36"
+            className="h-9 w-9 rounded-full ring-2 ring-indigo-400/40"
+          />
+          <span>
+            <span className="text-indigo-400">&lt;</span>
+            {profile.name.split(" ")[0]}
+            <span className="text-indigo-400"> /&gt;</span>
+          </span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">

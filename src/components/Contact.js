@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaHackerrank, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaHackerrank, FaLinkedin } from "react-icons/fa";
 import { SiGeeksforgeeks, SiLeetcode } from "react-icons/si";
-import { FiDownload, FiMail, FiPhone } from "react-icons/fi";
+import { FiArrowUpRight, FiMail } from "react-icons/fi";
 import { profile, socials } from "../data/portfolio";
-import Section, { fadeUp, stagger } from "./Section";
+import Section, { fadeUp, inView, stagger } from "./Section";
 
 const profiles = [
   { icon: <FaGithub />, label: "GitHub", href: socials.github },
@@ -12,75 +12,56 @@ const profiles = [
   { icon: <SiLeetcode />, label: "LeetCode", href: socials.leetcode },
   { icon: <FaHackerrank />, label: "HackerRank", href: socials.hackerrank },
   { icon: <SiGeeksforgeeks />, label: "GeeksforGeeks", href: socials.gfg },
-  { icon: <FaWhatsapp />, label: "WhatsApp", href: socials.whatsapp },
-  { icon: <FaInstagram />, label: "Instagram", href: socials.instagram },
 ];
 
 const Contact = () => (
-  <Section id="contact" eyebrow="07. Contact" title="Let's work together">
-    <motion.div
-      className="card relative overflow-hidden p-8 md:p-12"
-      variants={stagger}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-    >
+  <Section id="contact" eyebrow="Contact" title="Let's talk">
+    <motion.div className="card relative overflow-hidden p-8 md:p-12" variants={stagger} {...inView}>
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-indigo-600/20 blur-[100px]"
       />
-
-      <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div className="relative grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-end">
         <motion.div variants={fadeUp}>
-          <p className="max-w-md text-lg leading-relaxed text-slate-400">
-            I'm open to backend and AI engineering roles, collaborations, or just a friendly hello. My inbox is
-            always open.
+          <p className="max-w-xl text-2xl font-semibold leading-snug text-white md:text-3xl">
+            Building something real-time, multi-tenant or AI-powered?
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href={`mailto:${profile.email}`} className="btn-primary">
-              <FiMail /> Say hello
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-400">
+            I'm always happy to talk about backend architecture, real-time systems and AI agents. Email is the fastest
+            way to reach me.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href={`mailto:${profile.email}`} className="btn-primary break-all">
+              <FiMail className="shrink-0" aria-hidden /> {profile.email}
             </a>
-            <a href={profile.resume} download className="btn-ghost">
-              <FiDownload /> Download resume
+            <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+              <FaLinkedin aria-hidden /> Connect on LinkedIn
             </a>
           </div>
         </motion.div>
 
-        <motion.div variants={fadeUp} className="space-y-3">
-          <a
-            href={`mailto:${profile.email}`}
-            className="flex items-center gap-4 rounded-xl border border-white/10 p-4 transition hover:border-indigo-400/40"
-          >
-            <FiMail className="text-xl text-indigo-300" />
-            <span className="break-all text-slate-200">{profile.email}</span>
-          </a>
-          <a
-            href={`tel:${profile.phone.replace(/\s/g, "")}`}
-            className="flex items-center gap-4 rounded-xl border border-white/10 p-4 transition hover:border-indigo-400/40"
-          >
-            <FiPhone className="text-xl text-indigo-300" />
-            <span className="text-slate-200">{profile.phone}</span>
-          </a>
-        </motion.div>
+        <motion.nav variants={fadeUp} aria-label="Profiles">
+          <p className="mb-3 font-mono text-xs uppercase tracking-wider text-slate-400">Find me on</p>
+          <ul className="divide-y divide-white/10 rounded-xl border border-white/10">
+            {profiles.map((p) => (
+              <li key={p.label}>
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3 px-4 py-3 text-sm text-slate-300 transition hover:bg-white/[0.04] hover:text-white"
+                >
+                  <span className="text-lg text-slate-400 group-hover:text-indigo-300" aria-hidden>
+                    {p.icon}
+                  </span>
+                  {p.label}
+                  <FiArrowUpRight className="ml-auto text-slate-400 group-hover:text-indigo-300" aria-hidden />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </motion.nav>
       </div>
-
-      <motion.div variants={fadeUp} className="relative mt-10 border-t border-white/10 pt-8">
-        <p className="mb-4 font-mono text-sm text-slate-500">Find me on</p>
-        <div className="flex flex-wrap gap-3">
-          {profiles.map((p) => (
-            <a
-              key={p.label}
-              href={p.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300 transition hover:border-indigo-400/40 hover:text-white"
-            >
-              <span className="text-lg">{p.icon}</span>
-              {p.label}
-            </a>
-          ))}
-        </div>
-      </motion.div>
     </motion.div>
   </Section>
 );
