@@ -159,22 +159,6 @@ export const experience = [
       },
     ],
   },
-  {
-    company: "Maang Technologies",
-    location: "Remote",
-    period: "Nov 2023 – Nov 2024",
-    roles: [
-      {
-        title: "Technical Intern",
-        period: "Nov 2023 – Nov 2024",
-        points: [
-          "Delivered production FastAPI services end to end: schema design, routing, Pydantic v2 validation, PostgreSQL",
-          "Shipped REST APIs consumed directly by the production React front end",
-          "Built an IPL score prediction model (92% accuracy) served as a live inference endpoint",
-        ],
-      },
-    ],
-  },
 ];
 
 export const about = [
