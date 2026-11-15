@@ -48,7 +48,7 @@ const Navbar = () => {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a href="#top" className="flex items-center gap-3 font-mono text-lg font-semibold text-white">
+        <a href="#top" className="flex items-center gap-3 text-base font-semibold tracking-tight text-white">
           <img
             src="/avatar.webp"
             alt=""
@@ -56,11 +56,7 @@ const Navbar = () => {
             height="36"
             className="h-9 w-9 rounded-full ring-2 ring-indigo-400/40"
           />
-          <span>
-            <span className="text-indigo-400">&lt;</span>
-            {profile.name.split(" ")[0]}
-            <span className="text-indigo-400"> /&gt;</span>
-          </span>
+          <span>{profile.name}</span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
